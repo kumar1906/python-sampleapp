@@ -16,7 +16,7 @@ kind: Service
 metadata:
   name: my-python-app
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: devops
   ports:
