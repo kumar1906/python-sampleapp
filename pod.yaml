@@ -13,8 +13,8 @@ spec:
         app: devops
     spec:
       containers:
-      - name: flask-calculator
-        image: muthusurya/python-app:v1
+      - name: python-firstandlastname
+        image: saran1910/python-sample:v1
         ports:
         - containerPort: 5000
 ---
