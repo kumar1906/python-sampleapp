@@ -23,10 +23,9 @@ kind: Service
 metadata:
   name: my-python-app
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: devops
   ports:
     - port: 5000
       targetPort: 5000
-      nodePort: 30007
