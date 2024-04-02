@@ -1,15 +1,22 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: python-app-pod
-  labels:
-    app: devops
+  name: python-app
 spec:
-  containers:
-  - name: python-firstandlastname
-    image: saran1910/python-sample:v1
-    ports:
-    - containerPort: 5000
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops
+  template:
+    metadata:
+      labels:
+        app: devops
+    spec:
+      containers:
+      - name: python-firstandlastname
+        image: saran1910/python-sample:v1
+        ports:
+        - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
@@ -22,4 +29,3 @@ spec:
   ports:
     - port: 5000
       targetPort: 5000
-      nodePort: 30007
